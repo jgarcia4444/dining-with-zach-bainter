@@ -1,6 +1,8 @@
 
 import React from 'react'
-import NavLinks from './NavLinks';
+import NavLink from './NavLink';
+
+import logo from '../../media/logo/logo.png'
 
 const Navbar = () => {
 
@@ -12,13 +14,18 @@ const Navbar = () => {
     ];
 
     const renderNavLinks = () => {
-        return navLinks.map((info, i) => <NavLinks navInfo={info} key={`${i}-${info.to}`} />)
+        return navLinks.map((info, i) => <NavLink navInfo={info} key={`${i}-${info.to}`} />)
     }
 
     return (
-        <div className="w-full h-24 flex flex-row justify-between text-white items-center">
+        <div className="w-full flex flex-row justify-between text-black items-center bg-white rounded mb-4
+        p-2">
             <div className="w-1/4">
-                <h1 className="text-2xl font-bold">Logo</h1>
+                <div className="w-4/5">
+                    <a href="#header" className=''>
+                        <img className="" src={logo} alt="logo" />
+                    </a>
+                </div>
             </div>
             <div className="w-2/5">
                 {renderNavLinks()}
