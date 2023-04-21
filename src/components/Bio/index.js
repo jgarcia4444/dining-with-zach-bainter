@@ -4,7 +4,7 @@ import {FiUser} from 'react-icons/fi'
 const Bio = () => {
 
     return (
-        <div className="py-12 relative w-full bg-white rounded flex flex-row items-start justify-center">
+        <div id="bio" className="mb-4 py-12 px-4 relative w-full bg-white rounded flex flex-row items-start justify-center">
             <div className="w-1/3 flex flex-col justify-center items-center">
                 <div className="bg-black rounded-full p-10 flex justify-center items-center mb-2">
                     <FiUser className="" color={"fff"} size={148} />
