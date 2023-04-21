@@ -5,7 +5,7 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App p-4 bg-black text-white h-screen">
+    <div className="App p-4 bg-black h-screen text-white">
       <Navbar />
       <Header />
     </div>
