@@ -6,7 +6,7 @@ import Bio from './components/Bio';
 
 function App() {
   return (
-    <div className="App p-8 bg-black h-screen text-white">
+    <div className="App p-8 bg-black text-white">
       <Navbar />
       <Header />
       <Bio />
