@@ -8,7 +8,7 @@ const NavLinks = ({navInfo}) => {
     const {to, text} = navInfo;
 
     return (
-        <a onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} className={`font-bol transition-all mr-12 hover:text-gray-300 ${isHovering === true ? "animate-pulse" : ""}`} href={`#${to}`}>{text}</a>
+        <a onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)} className={`font-bol transition-all mr-12 hover:text-gray-300 ${isHovering === true ? "animate-pulse " : ""}`} href={`#${to}`}>{text}</a>
     )
 };
 
