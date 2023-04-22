@@ -5,17 +5,20 @@ import SectionTitle from '../../shared/SectionTitle';
 import Package from './Package';
 
 import example from '../../media/packages/example.png'
+import packagesImages from '../../config/packagesImages';
 
 const Packages = () => {
 
+    const {bbq, cocktailParty, fineDining, french, italian, mediterranean, mexican} = packagesImages;
+
     const packages = [
-        {title: 'French', pricePerPerson: "130", image: example},
-        {title: 'Fine Dining', pricePerPerson: "130", image: example},
-        {title: 'Mediterranean', pricePerPerson: "80", image: example},
-        {title: 'Italian', pricePerPerson: "80", image: example},
-        {title: 'BBQ', pricePerPerson: "80", image: example},
-        {title: 'Mexican', pricePerPerson: "65", image: example},
-        {title: 'Cocktail Party', pricePerPerson: "50", image: example},
+        {title: 'French', pricePerPerson: "130", image: french},
+        {title: 'Fine Dining', pricePerPerson: "130", image: fineDining},
+        {title: 'Mediterranean', pricePerPerson: "80", image: mediterranean},
+        {title: 'Italian', pricePerPerson: "80", image: italian},
+        {title: 'BBQ', pricePerPerson: "80", image: bbq},
+        {title: 'Mexican', pricePerPerson: "65", image: mexican},
+        {title: 'Cocktail Party', pricePerPerson: "50", image: cocktailParty},
     ]
 
     const renderPackages = () => {
