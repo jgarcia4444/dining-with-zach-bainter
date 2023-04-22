@@ -31,6 +31,15 @@ const Packages = () => {
             <div className="w-full flex flex-row flex-wrap mt-4">
                 {renderPackages()}
             </div>
+            <div className="w-full pl-10">
+                <p className=" font-bold text-xl">Details</p>
+                <ul className=' list-disc'>
+                    <li className="">Customized menus also available</li>
+                    <li className="">All menus can be modified or substituted.</li>
+                    <li className="">Menu changes may be subject to an additional expense</li>
+                    <li className="">Dietary restrictions can be accommodated</li>
+                </ul>
+            </div>
         </div>
     )
 }
