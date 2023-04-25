@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Bio from './components/Bio';
 import Packages from './components/Packages';
+import Services from './components/Services';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Bio />
       <Packages />
+      <Services />
     </div>
   );
 }
