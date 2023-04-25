@@ -3,14 +3,18 @@ import React from 'react'
 import SectionTitle from '../../shared/SectionTitle';
 import Service from './Service';
 
+import servicesImages from '../../config/sevicesImages';
+
 const Services = () => {
+
+    const {chef, waiter, bartender, catering} = servicesImages
 
     const renderServices = () => {
         let services = [
-            {text: "", icon: ""},
-            {text: "", icon: ""},
-            {text: "", icon: ""},
-            {text: "", icon: ""},
+            {text: "Chefs", image: chef},
+            {text: "Servers", image: waiter},
+            {text: "Bartenders", image: bartender},
+            {text: "Dropoff Catering", image: catering},
         ]
         return services.map((serviceInfo, i) => <Service info={serviceInfo} key={`${i}-${serviceInfo.text}`} />)
     }
@@ -22,7 +26,7 @@ const Services = () => {
                 <h4 className="">Guest Limit</h4>
                 <p className="">25</p>
             </div>
-            <div className="">
+            <div className="w-full flex flex-row flex-wrap">
                 {renderServices()}
             </div>
         </div>

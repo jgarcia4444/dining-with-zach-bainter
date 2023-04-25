@@ -12,13 +12,13 @@ const Packages = () => {
     const {bbq, cocktailParty, fineDining, french, italian, mediterranean, mexican} = packagesImages;
 
     const packages = [
-        {title: 'French', pricePerPerson: "130", image: french},
-        {title: 'Fine Dining', pricePerPerson: "130", image: fineDining},
-        {title: 'Mediterranean', pricePerPerson: "80", image: mediterranean},
-        {title: 'Italian', pricePerPerson: "80", image: italian},
-        {title: 'BBQ', pricePerPerson: "80", image: bbq},
-        {title: 'Mexican', pricePerPerson: "65", image: mexican},
-        {title: 'Cocktail Party', pricePerPerson: "50", image: cocktailParty},
+        {title: 'French', pricePerPerson: "130", image: french, id: 0},
+        {title: 'Fine Dining', pricePerPerson: "130", image: fineDining, id: 1},
+        {title: 'Mediterranean', pricePerPerson: "80", image: mediterranean, id: 2},
+        {title: 'Italian', pricePerPerson: "80", image: italian, id: 3},
+        {title: 'BBQ', pricePerPerson: "80", image: bbq, id: 4},
+        {title: 'Mexican', pricePerPerson: "65", image: mexican, id: 5},
+        {title: 'Cocktail Party', pricePerPerson: "50", image: cocktailParty, id: 6},
     ]
 
     const renderPackages = () => {
@@ -31,7 +31,7 @@ const Packages = () => {
             <div className="w-full flex flex-row flex-wrap mt-4">
                 {renderPackages()}
             </div>
-            <div className="w-full pl-10">
+            <div className="w-full">
                 <div className="bg-gray-300 p-4 w-full rounded shadow relative">
                     <p className="  text-3xl font-serif mb-2">Details</p>
                     <ul className='bg-white rounded p-2 shadow-inner w-1/2'>
