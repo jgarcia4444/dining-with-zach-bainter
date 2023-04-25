@@ -32,14 +32,15 @@ const Packages = () => {
                 {renderPackages()}
             </div>
             <div className="w-full pl-10">
-                <div className="w-1/2 bg-black text-white p-2">
-                    <p className=" font-bold text-xl">Details</p>
-                    <ul className=' list-disc'>
+                <div className="bg-gray-300 p-4 w-full rounded shadow relative">
+                    <p className="  text-3xl font-serif mb-2">Details</p>
+                    <ul className='bg-white rounded p-2 shadow-inner w-1/2'>
                         <li className="">Customized menus also available</li>
                         <li className="">All menus can be modified or substituted.</li>
                         <li className="">Menu changes may be subject to an additional expense</li>
                         <li className="">Dietary restrictions can be accommodated</li>
                     </ul>
+                    <div className="absolute top-2 right-2 w-1/4 h-1/2 transition-all bg-white shadow-inner rounded"></div>
                 </div>
             </div>
         </div>
