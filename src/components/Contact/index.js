@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import SectionTitle from '../../shared/SectionTitle'
 import InputComponent from './InputComponent';
 
@@ -41,6 +41,15 @@ const Contact = () => {
     const renderInputs = () => {
         return inputs.map((inputInfo, i) => <InputComponent inputInfo={inputInfo} key={`${i}-${inputInfo.label}`} />)
     }
+
+    useEffect(() => {
+        let checkedValues = [fName, lName, email, phone, eventDate, city, numberOfGuests, foodPackage, costPerson];
+        if (checkedValues.every(val => val !== "")) {
+            setAllFieldsFilled(true);
+        } else {
+            setAllFieldsFilled(false);
+        }
+    }, [fName, lName, email, phone, eventDate, city, numberOfGuests, foodPackage, costPerson])
 
     return (
         <div id="contact" className="w-full bg-white rounded text-black mb-4 py-12 px-4">
