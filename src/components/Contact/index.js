@@ -31,7 +31,7 @@ const Contact = () => {
     return (
         <div id="contact" className="w-full bg-white rounded text-black mb-4 py-12 px-4">
             <SectionTitle text={"Contact"} />
-            <div className="flex flex-row flex-wrap justify-between items-center mt-4 rounded shadow p-2 pt-4 bg-black ">
+            <div className="flex flex-row flex-wrap justify-between items-center mt-4 rounded shadow p-2 pt-4 bg-black relative">
                 <input onChange={e => setFName(e.target.value)} className="w-2/5 rounded p-2 mb-4" value={fName} type="text" placeholder="First Name"/>
                 <input onChange={e => setLName(e.target.value)} className="w-2/5 rounded p-2 mb-4" value={lName} type="text" placeholder="Last Name" />
                 <input onChange={e => setEmail(e.target.value)} className="w-2/5 rounded p-2 mb-4" value={email} type="email" placeholder="Email"/>
@@ -45,7 +45,7 @@ const Contact = () => {
                 </select>
                 <input onChange={e => setCostPerPerson(e.target.value)} className="w-2/5 rounded p-2 mb-4" value={costPerson} type="number" placeholder='$ per Person'/>
                 <textarea placeholder='Any comments or special requests?' className="w-2/5 rounded p-2 mb-4" value={comments} onChange={(e) => setComments(e.target.value)}>{comments}</textarea>
-                <div className="w-full border-2 border-white rounded-full text-white text-center py-2">
+                <div className="w-full border-2 border-white rounded text-white text-center py-2">
                     Send Form
                 </div>
             </div>
