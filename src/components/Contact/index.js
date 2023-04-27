@@ -40,6 +40,13 @@ const Contact = () => {
 
     const renderInputs = () => {
         return inputs.map((inputInfo, i) => <InputComponent inputInfo={inputInfo} key={`${i}-${inputInfo.label}`} />)
+    };
+
+    const handleSend = () => {
+        if (allFieldsFilled === true) {
+            // format and run the send form
+
+        } 
     }
 
     useEffect(() => {
@@ -56,7 +63,7 @@ const Contact = () => {
             <SectionTitle text={"Contact"} />
             <div className="flex flex-row flex-wrap justify-between items-start mt-4 rounded shadow p-2 pt-4 bg-gray-300 relative">
                 {renderInputs()}
-                <div className="w-full border-2 border-white rounded text-white text-center py-2">
+                <div onClick={handleSend} className={`w-full border-2 border-white rounded text-white text-center py-2 transition-all ${allFieldsFilled === true ? "border-0 shadow bg-white text-gray-300 cursor-pointer" : " cursor-not-allowed"}`}>
                     Send Form
                 </div>
             </div>
