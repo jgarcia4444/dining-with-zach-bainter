@@ -20,7 +20,7 @@ const Services = () => {
     }
 
     return (
-        <div id="services" className="w-full bg-white rounded text-black mb-4 py-12 px-4">
+        <div id="services" className="w-full bg-white lg:rounded text-black lg:mb-4 py-12 px-4">
             <SectionTitle text={"Services"} />
             <div className="flex flex-row flex-wrap relative">
                 <div className={`transition-all  bg-gray-100 mb-4 rounded shadow p-2 mr-2 hover:bg-opacity-0 hover:shadow-lg`}>

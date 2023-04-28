@@ -6,7 +6,7 @@ import headshot from '../../media/bio/zach.jpg';
 const Bio = () => {
 
     return (
-        <div id="bio" className="transition-all mb-4 py-12 px-4 relative w-full bg-white rounded flex lg:flex-row flex-col items-start justify-center">
+        <div id="bio" className="transition-all lg:mb-4 py-12 px-4 relative w-full bg-white lg:rounded flex lg:flex-row flex-col items-start justify-center">
             <div className="lg:w-2/5 w-full  flex flex-col justify-center items-center">
                 <img src={headshot} alt="Head shot" className="w-5/6 rounded-full mb-4 shadow" />
                 <h3 className="text-black text-4xl font-sans font-bold">Zach Bainter</h3>

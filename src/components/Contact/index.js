@@ -97,7 +97,7 @@ const Contact = () => {
     }, [fName, lName, email, phone, eventDate, city, numberOfGuests, foodPackage, costPerson])
 
     return (
-        <div id="contact" className="w-full bg-white rounded text-black mb-4 py-12 px-4">
+        <div id="contact" className="w-full bg-white lg:rounded text-black lg:mb-4 py-12 px-4">
             <SectionTitle text={"Contact"} />
             {formReceived === true ? 
                 <div className="flex flex-col items-start justify-center text-white mt-4 rounded shadow p-2 pt-4 bg-gray-300 relative">

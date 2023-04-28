@@ -26,13 +26,13 @@ const Packages = () => {
     }
 
     return (
-        <div className="w-full bg-white rounded text-black mb-4 py-12 px-4">
+        <div className="w-full bg-white lg:rounded text-black lg:mb-4 py-12 lg:px-4">
             <SectionTitle text="Packages" />
-            <div className="w-full flex flex-row flex-wrap mt-4">
+            <div className="w-full  flex flex-col lg:flex-row flex-wrap mt-4">
                 {renderPackages()}
             </div>
-            <div className="w-full">
-                <div className="bg-gray-300 p-4 w-full rounded shadow relative">
+            <div className="w-full px-2 lg:px-0">
+                <div className="bg-gray-300 mt-6 lg:mt-0 p-4 w-full rounded shadow relative">
                     <p className="  text-3xl font-serif mb-2">Details</p>
                     <ul className='bg-white rounded p-2 shadow-inner w-1/2'>
                         <li className="">Customized menus also available</li>
