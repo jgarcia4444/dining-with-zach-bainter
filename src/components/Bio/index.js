@@ -1,17 +1,17 @@
 import React from 'react'
 import {FiUser} from 'react-icons/fi'
 
+import headshot from '../../media/bio/zach.jpg';
+
 const Bio = () => {
 
     return (
         <div id="bio" className="mb-4 py-12 px-4 relative w-full bg-white rounded flex flex-row items-start justify-center">
-            <div className="w-1/3 flex flex-col justify-center items-center">
-                <div className="bg-black rounded-full p-10 flex justify-center items-center mb-2">
-                    <FiUser className="" color={"fff"} size={148} />
-                </div>
+            <div className="w-2/5 flex flex-col justify-center items-center">
+                <img src={headshot} alt="Head shot" className="w-5/6 rounded-full mb-4 shadow" />
                 <h3 className="text-black text-4xl font-sans font-bold">Zach Bainter</h3>
             </div>
-            <div className="w-2/3 flex flex-col">
+            <div className="w-3/5 flex flex-col">
                 <div className="w-full mb-2">
                     <h2 className=" text-black text-6xl font-serif">BIO</h2>
                 </div>
