@@ -1,5 +1,7 @@
 
 import React, {useState, useEffect} from 'react';
+import {FiMenu} from 'react-icons/fi';
+
 import NavLink from './NavLink';
 
 import logo from '../../media/logo/logo.png'
@@ -8,6 +10,7 @@ const Navbar = () => {
 
     const [showFixedNav, setShowFixedNav] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [showMobileNavLinks, setShowMobileNavLinks] = useState(false);
 
     const navLinks = [
         {text: "Bio", to: "bio"},
@@ -31,6 +34,14 @@ const Navbar = () => {
         }
     };
 
+    const renderNavLinksButton = () => {
+        return (
+            <div onClick={() => setShowMobileNavLinks(!showMobileNavLinks)} className="rounded hover:shadow-xl transition-all  p-2 border-2 border-white cursor-pointer ">
+                <FiMenu className="" color={'#000'} size={32} />
+            </div>
+        )
+    }
+
     useEffect(() => {
         if (typeof window !== 'undefined') {
             window.addEventListener('scroll', controlNavbar)
@@ -49,8 +60,15 @@ const Navbar = () => {
                     </a>
                 </div>
             </div>
-            <div className="w-2/5">
+
+            <div className="w-2/5 hidden lg:block">
                 {renderNavLinks()}
+            </div>
+            <div className="w-2/5 flex items-center justify-center lg:hidden relative">
+                {renderNavLinksButton()}
+                <div className="w-5/6 absolute top-6 left-0">
+                    {}
+                </div>
             </div>
         </div>
     )
