@@ -5,7 +5,7 @@ import headerImage from '../../media/header/header-img.webp'
 const Header = () => {
 
     return (
-            <header id="header" className="w-full relative rounded lg:mb-4 sm:mb-0">
+            <header id="header" className=" -z-10  w-full relative rounded lg:mb-4 sm:mb-0">
                 <img src={headerImage} alt="header" className="w-full lg:rounded" />
                 <div className="w-full h-full absolute top-0 left-0 bg-white bg-opacity-40 flex sm:flex-col lg:flex-row justify-center items-center flex-wrap">
                     <div className="lg:w-2/3  sm:w-full flex justify-center items-center">

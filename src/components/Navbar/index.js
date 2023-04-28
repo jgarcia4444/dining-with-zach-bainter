@@ -42,6 +42,20 @@ const Navbar = () => {
         )
     }
 
+    const renderMobileMenuRows = () => {
+        return navLinks.map((linkInfo, i) => {
+            return (
+                <div 
+                    key={`${i}-${linkInfo.text}`} 
+                    className={`w-full flex items-center justify-center  border-black border-t-2 border-r-2 border-l-2 cursor-pointer transition-all hover:bg-gray-200 p-2 ${i === 3 ? "border-b-2" : ""} ${i === 0 ? "rounded-t" : ""} ${i === navLinks.length - 1 ? "rounded-b" : ""}`}
+                    onClick={() => setShowMobileNavLinks(false)}
+                >
+                    <NavLink navInfo={linkInfo} isMobile={true} />
+                </div>
+            )
+        })
+    }
+
     useEffect(() => {
         if (typeof window !== 'undefined') {
             window.addEventListener('scroll', controlNavbar)
@@ -66,9 +80,11 @@ const Navbar = () => {
             </div>
             <div className="w-2/5 flex items-center justify-center lg:hidden relative">
                 {renderNavLinksButton()}
-                <div className="w-5/6 absolute top-6 left-0">
-                    {}
-                </div>
+                {showMobileNavLinks === true &&
+                    <div className="w-5/6 absolute top-14 left-0 bg-white rounded shadow-lg z-10">
+                        {renderMobileMenuRows()}
+                    </div>
+                }
             </div>
         </div>
     )
