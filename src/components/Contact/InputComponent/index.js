@@ -77,7 +77,7 @@ const InputComponent = ({inputInfo}) => {
     }
 
     return (
-        <div className="w-1/2 p-4 flex flex-col justify-center items-center transition-all">
+        <div className={`${type === "textarea" ? "w-full" : "w-1/2"} p-4 flex flex-col justify-center items-center transition-all`}>
             { value !== "" &&
                 (<div className={`w-full bg-white rounded-b-none  z-50 rounded ${value !== "" ? "pb-2" : ""}`}>
                     <label className="text-gray-300 pl-2 " >{value === "" ? "" : label}</label>
