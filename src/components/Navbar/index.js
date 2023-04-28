@@ -41,7 +41,7 @@ const Navbar = () => {
     },[lastScrollY])
 
     return (
-        <div className={`w-full flex flex-row justify-between text-black items-center transition-all bg-white rounded mb-4 p-2 ${showFixedNav === true ? "sticky top-0 left-0 w-full z-50 shadow rounded-t-none" : ""}`}>
+        <div className={`w-full flex flex-row justify-between text-black items-center transition-all bg-white lg:rounded lg:mb-4 sm:mb-0 p-2 ${showFixedNav === true ? "sticky top-0 left-0 w-full z-50 shadow rounded-t-none" : ""}`}>
             <div className="w-1/4">
                 <div className="w-4/5">
                     <a href="#header" className=''>
