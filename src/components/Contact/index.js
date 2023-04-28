@@ -1,5 +1,8 @@
 
 import React, {useState, useEffect} from 'react'
+import emailjs from 'emailjs-com';
+import {FiLoader} from 'react-icons/fi';
+
 import SectionTitle from '../../shared/SectionTitle'
 import InputComponent from './InputComponent';
 
@@ -18,6 +21,8 @@ const Contact = () => {
     const packages = ["French", "Fine Dining", "Mediterranean", "Italian", "BBQ", "Mexican", "Cocktail Party"];
     const [costPerson, setCostPerPerson] = useState("");
     const [comments, setComments] = useState("");  
+    const [sendingForm, setSendingForm] = useState(false);
+    const [formReceived, setFormReceived] = useState(false);
 
     const handleFoodPackageSelection = e => {
         let {value} = e.target;
@@ -44,9 +49,42 @@ const Contact = () => {
 
     const handleSend = () => {
         if (allFieldsFilled === true) {
-            // format and run the send form
-
+            setSendingForm(true);
+            let formInfo = {
+                first_name: fName,
+                last_name: lName,
+                email: email,
+                phone: phone,
+                date: eventDate,
+                number_of_guests: numberOfGuests,
+                package: foodPackage,
+                cost_per_person: costPerson,
+                comments: comments,
+                city: city,
+            }
+            setTimeout(() => {
+                emailjs.send(
+                    "service_7gym0nn",
+                    "template_psuh1hm",
+                    formInfo,
+                    "axxiNbR8vVPyjY2_4",
+                )
+                    .then(res => {
+                        if (res.status === 200) {
+                            setFormReceived(true);
+                        }
+                        setSendingForm(false);
+                    })
+            }, 1000)
         } 
+    }
+
+    const sendFormDisplay = () => {
+        if (sendingForm === true) {
+            return <FiLoader color={"#ccc"} size={24} className="animate-spin"/>
+        } else {
+            return "Send Form"
+        }
     }
 
     useEffect(() => {
@@ -61,12 +99,19 @@ const Contact = () => {
     return (
         <div id="contact" className="w-full bg-white rounded text-black mb-4 py-12 px-4">
             <SectionTitle text={"Contact"} />
-            <div className="flex flex-row flex-wrap justify-between items-start mt-4 rounded shadow p-2 pt-4 bg-gray-300 relative">
-                {renderInputs()}
-                <div onClick={handleSend} className={`w-full border-2 border-white rounded text-white text-center py-2 transition-all ${allFieldsFilled === true ? "border-0 shadow bg-white text-gray-300 cursor-pointer" : " cursor-not-allowed"}`}>
-                    Send Form
+            {formReceived === true ? 
+                <div className="flex flex-col items-start justify-center text-white mt-4 rounded shadow p-2 pt-4 bg-gray-300 relative">
+                    <h3 className="text-2xl font-bold font-sans">Thank you for the inquiry!</h3>
+                    <p className="text-md font-sans">We will review the information recieved as soon as possible and return the needed information to you as fast as possible.</p>
                 </div>
-            </div>
+            :
+                <div className="flex flex-row flex-wrap justify-between items-start mt-4 rounded shadow p-2 pt-4 bg-gray-300 relative">
+                    {renderInputs()}
+                    <div onClick={handleSend} className={`w-full border-2 border-white rounded text-white text-center py-2 transition-all ${allFieldsFilled === true ? "border-0 shadow bg-white text-gray-300 cursor-pointer flex items-center justify-center" : " cursor-not-allowed"}`}>
+                        {sendFormDisplay()}
+                    </div>
+                </div>
+            }
         </div>
     )
 }
