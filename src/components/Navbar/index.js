@@ -22,9 +22,9 @@ const Navbar = () => {
 
     const controlNavbar = () => {
         if (typeof window !== 'undefined') { 
-          if (window.scrollY > 14) {
+          if (window.scrollY > 20) {
             setShowFixedNav(true); 
-          } else if (window.scrollY < 15) { 
+          } else if (window.scrollY < 21) { 
             setShowFixedNav(false);  
           }
           setLastScrollY(window.scrollY); 
@@ -41,11 +41,11 @@ const Navbar = () => {
     },[lastScrollY])
 
     return (
-        <div className={`w-full flex flex-row justify-between text-black items-center transition-all bg-white rounded mb-4 p-2 ${showFixedNav === true ? "sticky top-0 left-0 w-full z-50 shadow-lg rounded-t-none" : ""}`}>
+        <div className={`w-full flex flex-row justify-between text-black items-center transition-all bg-white rounded mb-4 p-2 ${showFixedNav === true ? "sticky top-0 left-0 w-full z-50 shadow rounded-t-none" : ""}`}>
             <div className="w-1/4">
                 <div className="w-4/5">
                     <a href="#header" className=''>
-                        <img className="" src={logo} alt="logo" />
+                        <img className={`${showFixedNav === true ? "w-3/4" : ""} transition-all`} src={logo} alt="logo" />
                     </a>
                 </div>
             </div>
