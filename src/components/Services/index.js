@@ -32,7 +32,7 @@ const Services = () => {
                     <p className="text-lg font-sans">Guest's Residence</p>
                 </div>
             </div>
-            <div className="w-full flex flex-row flex-wrap">
+            <div className="w-full flex flex-col lg:flex-row flex-wrap">
                 {renderServices()}
             </div>
         </div>
