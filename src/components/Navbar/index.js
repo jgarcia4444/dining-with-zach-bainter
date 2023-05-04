@@ -47,7 +47,7 @@ const Navbar = () => {
             return (
                 <div 
                     key={`${i}-${linkInfo.text}`} 
-                    className={`w-full flex items-center justify-center  border-black border-t-2 border-r-2 border-l-2 cursor-pointer transition-all hover:bg-gray-200 p-2 ${i === 3 ? "border-b-2" : ""} ${i === 0 ? "rounded-t" : ""} ${i === navLinks.length - 1 ? "rounded-b" : ""}`}
+                    className={`w-full flex items-center justify-center cursor-pointer transition-all hover:bg-gray-700 p-2 bg-black text-white mb-1`}
                     onClick={() => setShowMobileNavLinks(false)}
                 >
                     <NavLink navInfo={linkInfo} isMobile={true} />
