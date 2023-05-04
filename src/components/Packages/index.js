@@ -34,11 +34,11 @@ const Packages = () => {
             <div className="w-full px-2 lg:px-0">
                 <div className="bg-gray-300 mt-6 lg:mt-0 p-4 w-full rounded shadow relative">
                     <p className="  text-3xl font-serif mb-2">Details</p>
-                    <ul className='bg-white rounded p-2 shadow-inner w-1/2'>
-                        <li className="">Customized menus also available</li>
-                        <li className="">All menus can be modified or substituted.</li>
-                        <li className="">Menu changes may be subject to an additional expense</li>
-                        <li className="">Dietary restrictions can be accommodated</li>
+                    <ul className='bg-white rounded shadow-inner w-1/2 p-1'>
+                        <li className="p-1">Customized menus also available</li>
+                        <li className="bg-gray-300 text-white p-1 rounded shadow">All menus can be modified or substituted.</li>
+                        <li className="p-1">Menu changes may be subject to an additional expense</li>
+                        <li className="p-1 bg-gray-300 text-white rounded shadow">Dietary restrictions can be accommodated</li>
                     </ul>
                     <div className="absolute top-2 right-2 w-1/4 h-1/2 transition-all bg-white shadow-inner rounded"></div>
                 </div>
